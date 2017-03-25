@@ -1,4 +1,4 @@
-package abstraction;
+package entity;
 
 
 public abstract class Stone {

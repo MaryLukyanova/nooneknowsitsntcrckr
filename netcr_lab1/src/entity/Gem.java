@@ -1,7 +1,5 @@
 package entity;
 
-import abstraction.Stone;
-
 public class Gem extends Stone{
 	
 	public enum Name {

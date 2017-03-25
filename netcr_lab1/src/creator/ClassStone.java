@@ -2,7 +2,7 @@ package creator;
 
 import entity.Gem;
 import entity.Semiprecious;
-import abstraction.Stone;
+import entity.Stone;
 
 
 public class ClassStone {

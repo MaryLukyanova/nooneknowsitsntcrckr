@@ -3,7 +3,6 @@ package entity;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import abstraction.Stone;
 import compare.ValueComparator;
 import compare.ValuePriceComparator;
 
@@ -65,5 +64,16 @@ public class Necklace {
 				stones.add(st);
 		}
 		return  stones;
+	}
+
+	@Override
+	public String toString() {
+		String necklaceString="";
+		for(Stone st : necklace)
+		{
+			necklaceString += st.getName() + "\t" + st.getCarat() + "\t" + st.getStonePrice() +"\r\n";
+		}
+
+		return necklaceString;
 	}
 }

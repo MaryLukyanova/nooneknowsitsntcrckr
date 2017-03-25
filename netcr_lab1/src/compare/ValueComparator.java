@@ -2,7 +2,7 @@ package compare;
 
 import java.util.Comparator;
 
-import abstraction.Stone;
+import entity.Stone;
 
 public class ValueComparator implements Comparator<Stone> {
 

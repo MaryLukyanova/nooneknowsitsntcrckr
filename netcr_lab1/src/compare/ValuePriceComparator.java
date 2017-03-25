@@ -1,6 +1,6 @@
 package compare;
 
-import abstraction.Stone;
+import entity.Stone;
 
 import java.util.Comparator;
 
