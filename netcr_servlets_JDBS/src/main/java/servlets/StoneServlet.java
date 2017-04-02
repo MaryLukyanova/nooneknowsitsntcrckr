@@ -1,5 +1,6 @@
 package servlets;
 
+import dao.JDBCUtils;
 import model.creator.ClassStone;
 import model.myEntitys.Necklace;
 import model.myEntitys.Stone;
@@ -12,9 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
+import java.sql.Connection;
 
 /**
  * Created by USER on 02.04.2017.
@@ -22,16 +22,15 @@ import java.util.Scanner;
 @WebServlet(urlPatterns = "/stones", loadOnStartup = 1)
 public class StoneServlet extends HttpServlet {
 
-    public static final String INPUT_FILE_NAME = "C:\\Users\\USER\\IdeaProjects\\netcr_servlets_JDBS\\input.txt";
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        Necklace necklace = getNecklaceFromFile();
-        ArrayList<Stone> stones = necklace.getNecklace();
+        Connection conn = JDBCUtils.getConnectionPool().checkOut();
 
-        request.setAttribute("stones", stones);
+        request.setAttribute("stones", JDBCUtils.getStones(conn));
+        JDBCUtils.getConnectionPool().checkIn(conn);
+
         request.getRequestDispatcher("stones.jsp").forward(request, response);
     }
     @Override
@@ -40,7 +39,7 @@ public class StoneServlet extends HttpServlet {
         super.doPost(request, response);
     }
 
-
+    public static final String INPUT_FILE_NAME = "C:\\Users\\USER\\IdeaProjects\\netcr_servlets_JDBS\\input.txt";
     public static Necklace getNecklaceFromFile(){
         Necklace necklace = new Necklace();
         Scanner scanner = null;

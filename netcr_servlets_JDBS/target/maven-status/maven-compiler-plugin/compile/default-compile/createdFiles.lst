@@ -4,12 +4,13 @@ model\myEntitys\Stone.class
 model\compare\ValueComparator.class
 model\myEntitys\Gem$Name.class
 model\myEntitys\Semiprecious.class
+dao\JDBCUtils.class
 model\myEntitys\Semiprecious$1.class
 model\myEntitys\Gem.class
 model\myEntitys\Necklace.class
 servlets\StoneServlet.class
-servlets\EmployeesServlet.class
-model\Employee.class
+dao\ObjectPool.class
 servlets\TestServlet.class
 model\compare\ValuePriceComparator.class
 model\myEntitys\Semiprecious$Name.class
+dao\JDBCConnectionPool.class

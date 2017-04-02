@@ -488,6 +488,5 @@
 </table>
 <script src="<c:url value="//js/lib/jquery-1.12.4.js"/>"></script>
 <script src="<c:url value="//js/lib/jquery.dataTables.min.js"/>"></script>
-<script src="<c:url value="//js/employees.js"/>"></script>
 </body>
 </html>

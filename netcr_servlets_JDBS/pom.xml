@@ -28,6 +28,11 @@
 
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -47,6 +52,7 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
