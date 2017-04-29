@@ -51,28 +51,6 @@ public class JDBCUtils {
         }
         return prop;
     }
-
-    public static Collection<Stone> getStones(Connection conn) {
-        List<Stone> list = new ArrayList<>();
-        String sql = "select * from stones";
-        PreparedStatement pstm = null;
-        try {
-            pstm = conn.prepareStatement(sql);
-            ResultSet rs = pstm.executeQuery();
-
-            while (rs.next()) {
-                String classStone = rs.getString("class");
-                String name = rs.getString("name");
-                Double carat = rs.getDouble("carat");
-
-                Stone stone = ClassStone.createStone(classStone, name, carat);
-                list.add(stone);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
 /*
     public static void insertEmployee(Connection conn, Employee employee) {
         String sql = "insert into employees(name,position,office,age,startDate,salary) values (?,?,?,?,?,?)";

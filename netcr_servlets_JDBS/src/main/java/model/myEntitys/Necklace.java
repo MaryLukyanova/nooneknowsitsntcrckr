@@ -3,9 +3,11 @@ package model.myEntitys;
 
 import model.compare.ValueComparator;
 import model.compare.ValuePriceComparator;
+import model.creator.ClassStone;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Necklace {
 	
@@ -14,6 +16,9 @@ public class Necklace {
 
 	public Necklace() {
 		necklace = new ArrayList<>();
+	}
+	public Necklace(List<Stone> list) {
+		necklace = (ArrayList<Stone>) list;
 	}
 
 	public ArrayList<Stone> getNecklace() {
@@ -72,9 +77,21 @@ public class Necklace {
 		String necklaceString="";
 		for(Stone st : necklace)
 		{
-			necklaceString += st.getName() + "\t" + st.getCarat() + "\t" + st.getStonePrice() +"\r\n";
+			necklaceString += "[" + st.getId() + "," + st.getName() + "," + st.getCarat() +"] ";
 		}
 
 		return necklaceString;
+	}
+
+	public static Necklace getFromString(String line, String type){
+		Necklace necklace = new Necklace();
+		Stone stone = null;
+		String[] string = line.split("[ ],");
+		if(line.compareTo("")!=0)
+			for(int i=0; i<string.length; i+=3){
+				stone = ClassStone.createStone(type, Integer.parseInt(string[i]), string[i+1], Double.valueOf(string[i+2]));
+				necklace.addStone(stone);
+			}
+		return necklace;
 	}
 }

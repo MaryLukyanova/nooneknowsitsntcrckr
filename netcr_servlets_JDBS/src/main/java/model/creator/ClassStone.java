@@ -7,14 +7,14 @@ import model.myEntitys.Stone;
 
 public class ClassStone {
 
-	public static Stone createStone(String type, String name, double carat){
+	public static Stone createStone(String type, int id, String name, double carat){
 		Stone stone = null;
 		switch(type.toUpperCase()){
-			case "GEM" :
-				stone = new Gem(name, carat);
+			case "GEMS" :
+				stone = new Gem(id, name, carat);
 				break;
 			case "SEMIPRECIOUS" :
-				stone = new Semiprecious(name, carat);
+				stone = new Semiprecious(id, name, carat);
 				break;
 		}
 		return stone;

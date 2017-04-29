@@ -1,3 +1,7 @@
 $(document).ready(function() {
-    $('#stones').DataTable();
+    $('#gems').DataTable();
+} );
+
+$(document).ready(function() {
+    $('#semiprecious').DataTable();
 } );

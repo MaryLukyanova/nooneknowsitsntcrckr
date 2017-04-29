@@ -12,21 +12,21 @@ public class Semiprecious extends Stone{
 		AGATE
 	};
 	
-	public Semiprecious (String name, double carat){
-		super(name, carat);
+	public Semiprecious (int id, String name, double carat){
+		super(id, name, carat);
 	};
 	
 	public double getStonePrice() {
 		Name name = Name.valueOf(getName());
 		double price=0;
 		switch(name){
-			case QUARTZ :  price = 100;
-			case AMBER :  price = 90;
-			case LAPISLAZULI : price = 110;
-			case MALACHITE : price = 80;
-			case ONYX : price = 65;
-			case JASPER : price = 40;
-			case AGATE : price = 70;
+			case QUARTZ :  price = 100; break;
+			case AMBER :  price = 90; break;
+			case LAPISLAZULI : price = 110; break;
+			case MALACHITE : price = 80; break;
+			case ONYX : price = 65; break;
+			case JASPER : price = 40; break;
+			case AGATE : price = 70; break;
 		}
 		return  price*getCarat();
 	}
